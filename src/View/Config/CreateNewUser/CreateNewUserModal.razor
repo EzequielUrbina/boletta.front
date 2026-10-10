@@ -101,21 +101,7 @@
                                                 <label for="DirectorRol">Director</label>
                                             </div>
                                         </div>
-
-                                        <div class="form-group">
-                                            <h6 class="label-required"> Grupo en Nextcloud</h6>
-                                            @foreach (var item in NextcloudGroup)
-                                            {
-                                                <div class="checkbox-wrapper-14">
-                                                    <input type="checkbox" id="@item" value="@item"
-                                                           checked="@((User.nextCloudGroup == item))"
-                                                           @onchange="() => User.nextCloudGroup = item"/>
-
-                                                    <label for="@item">@item</label>
-                                                </div>
-                                            }
-                                        </div>
-
+                                        
                                     </div>
                                 </div>
                             </div>

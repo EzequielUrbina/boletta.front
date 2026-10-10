@@ -111,8 +111,7 @@ function imprimirContenido() {
         <div class="print-container">
           <!-- Encabezado -->
           <div class="header">
-            <img src="https://cbl-edu.com/assets/material-kit-3/img/logos/CBL_COLOR.png" alt="Logo de la Compañía">
-            <h1>Colegio Bautista Libertad</h1>
+            <h1>Boletta</h1>
           </div>
 
           <!-- Fecha y hora -->
@@ -129,7 +128,7 @@ function imprimirContenido() {
             </p>
             <p>
               Si tiene algún problema o pregunta, no dude en contactarnos a través de nuestro correo de soporte:
-              <strong>soporte@cbl-edu.com</strong>.
+              <strong>soporte@boletta.app</strong>.
             </p>
           </div>
 
@@ -139,12 +138,11 @@ function imprimirContenido() {
             <p><strong>Usuario:</strong> ${nombre}</p>
             <p><strong>Correo:</strong> ${email}</p>
             <p><strong>Contraseña:</strong><span class="password-field">${contrasena}</span></p>
-            <p><strong>URL de Acceso:</strong> <a href="https://wsm.cbl-edu.com" target="_blank">https://wsm.cbl-edu.com</a></p>
           </div>
 
           <!-- Pie de página -->
           <div class="footer">
-            Documento generado automáticamente por WSM-CBL. No lo comparta con terceros.
+            Documento generado automáticamente por Boletta. No lo comparta con terceros.
           </div>
         </div>
       </body>

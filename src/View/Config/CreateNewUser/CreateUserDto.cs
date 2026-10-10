@@ -11,7 +11,7 @@ public class CreateUserDto
 
     public bool IsDataValid()
     {
-        if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname) || string.IsNullOrEmpty(nextCloudGroup))
+        if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(surname))
         {
             return false;
         }
