@@ -14,12 +14,9 @@
                     <!-- Logo y Encabezado -->
                     <div class="row mb-4">
                         <div class="col-12 text-center">
-                            <img src="img/cbl_logo.png" alt="Logo" class="img-fluid mb-3" style="max-height: 100px;">
-                            <h3>Colegio Bautista Libertad</h3>
-                            <p>Entrada norte, Centro Comercial Managua, 1 cuadra arriba, 1/2 cuadra al sur.</p>
-                            <p>Correo.: soporte@cbl-edu.com</p>
-                            <p>Tel.: 2270-5587</p>
-                            <p>www.cbl-edu.com</p>
+                            <img src="img/Logo/Boletta500x500.png" alt="Logo" class="img-fluid mb-3" style="max-height: 100px;">
+                            <h3>Boletta</h3>
+                            <p>Correo.: soporte@boletta.app</p>
                         </div>
                     </div>
 
@@ -35,7 +32,7 @@
                                         <tr>
                                             <th>Código:</th>
                                             <td>@Padron.studentId</td>
-                                            <th>Cod. MINED:</th>
+                                            <th>CUP:</th>
                                             <td>@Padron.minedId</td>
                                             <th>Fecha Nto.:</th>
                                             <td>@Padron.birthday</td>
@@ -139,7 +136,10 @@
             </div>
 
             <div class="text-gray-800">
-                Impreso el @DateTime.Now.ToString("ddd dd/MMM/yyyy, h:mm tt") por @User?.getAlias()
+                @{
+                    var utc6Time = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(-6));
+                }
+                Impreso el @utc6Time.ToString("ddd dd/MMM/yyyy, h:mm tt") por @User?.getAlias()
             </div>
             <!-- Pie de página del modal (visible en pantalla, oculto al imprimir) -->
             <div class="modal-footer no-print">
