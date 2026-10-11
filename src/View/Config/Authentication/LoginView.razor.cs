@@ -100,29 +100,24 @@ public partial class LoginView : ComponentBase
     }
     private bool ValidateEmail()
     {
-        var regex = new Regex(@"^[a-zA-Z]+\.[a-zA-Z]+(\d{2})?@cbl-edu\.com$", RegexOptions.IgnoreCase);
         if (string.IsNullOrWhiteSpace(email))
         {
             errorMessage = "El correo electrónico es requerido";
             return false;
         }
+        
+        var regex = new Regex(@"^[a-zA-Z]+\.[a-zA-Z]+\d*@boletta\.app$", RegexOptions.IgnoreCase);
+
         if (!regex.IsMatch(email))
         {
-            errorMessage = "Formato inválido. Use: su correo institucional";;
+            errorMessage = "Formato inválido. Use su correo institucional (ej. nombre.apellido@boletta.app)";
             return false;
         }
-        if (email.Any(char.IsDigit))
-        {
-            var digitCount = email.Split('@')[0].ToCharArray().Count(char.IsDigit);
-            if (digitCount != 2)
-            {
-                errorMessage = "Debe incluir exactamente 2 dígitos cuando use números";
-                return false;
-            }
-        }
+
         errorMessage = "";
         return true;
     }
+    
     //captcha
     private string? _turnstileToken;
     private void TurnstileCallback(string token)
