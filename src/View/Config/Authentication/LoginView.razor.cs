@@ -106,11 +106,12 @@ public partial class LoginView : ComponentBase
             return false;
         }
         
-        var regex = new Regex(@"^[a-zA-Z]+\.[a-zA-Z]+\d*@boletta\.app$", RegexOptions.IgnoreCase);
-
+        // Acepta: texto/números/símbolos + @ + cualquier dominio/texto
+        var regex = new Regex(@"^[^@\s]+@[^@\s]+$", RegexOptions.IgnoreCase);
+        
         if (!regex.IsMatch(email))
         {
-            errorMessage = "Formato inválido. Use su correo institucional (ej. nombre.apellido@boletta.app)";
+            errorMessage = "El formato del correo electrónico no es válido";
             return false;
         }
 
