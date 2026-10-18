@@ -13,13 +13,8 @@ public partial class CreateNewUserModal : ComponentBase
     [Inject] Notificator Notificator { get; set; } = default!;
     [Inject] Navigator Navigator { get; set; } = default!;
     private CreateUserDto User { get; set; } = new();
-    private List<string> NextcloudGroup { get; set; } = [];
     private bool isLoading = false;
-
-    protected override async Task OnParametersSetAsync()
-    {
-        NextcloudGroup = await Controller.GetNextclodGroups();
-    }
+    
     
     private async Task SaveUser()
     {
