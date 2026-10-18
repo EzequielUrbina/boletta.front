@@ -10,6 +10,7 @@ services:
     environment:
       - API=${API}
       - CAPTCHA=${CAPTCHA}
+      - CAPTCHAPUBLIC=${CAPTCHAPUBLIC}
     ports:
       - '4001:8080'
 

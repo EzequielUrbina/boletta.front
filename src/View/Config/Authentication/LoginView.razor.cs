@@ -19,9 +19,11 @@ public partial class LoginView : ComponentBase
     [Inject] private TurnstileService turnstileService { get; set; } = null!;
     [Inject] private CustomAuthenticationStateProvider? AuthStateProvider { get; set; }
     private int _turnstileKey = 0;
+    private string CAPTCHAPUBLIC = string.Empty;
     
     protected override async Task OnInitializedAsync()
     {
+        CAPTCHAPUBLIC = Environment.GetEnvironmentVariable("CAPTCHAPUBLIC") ?? "N/A";
         var userRole = await jwtClaimsService.GetClaimRole("role");
         var roleRoutes = new Dictionary<string, string>
         {
