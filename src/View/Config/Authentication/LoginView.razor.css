@@ -28,7 +28,7 @@
 /* Columna de la imagen */
 .login-image-col {
     flex: 1;
-    background: url('img/Banner.png') center center;
+    background: url('img/Logo/login-img.svg') center center;
     background-size: cover;
     position: relative;
     display: flex;
@@ -42,7 +42,20 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0);
+}
+
+@media (max-width: 768px) {
+    .login-row {
+        flex-direction: column;
+    }
+
+    .login-image-col {
+        min-height: 220px;
+        background-image: url('img/Logo/boletta-login-banner-mobile.svg');
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 .login-image-content {
